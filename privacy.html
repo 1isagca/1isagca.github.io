@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – AGC n8n Gmail</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#555;--line:#ddd}
+@media (prefers-color-scheme:dark){:root{--bg:#161616;--fg:#eee;--mut:#aaa;--line:#333}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 16px}
+h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:2rem}
+.mut{color:var(--mut)}hr{border:0;border-top:1px solid var(--line);margin:2rem 0}
+a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+<p><a href="index.html">← AGC n8n Gmail</a></p>
+<h1>Privacy Policy</h1>
+<p class="mut">Last updated: 2026-10-22</p>
+
+<h2>1. Scope</h2>
+<p>This policy covers "AGC n8n Gmail", a private application run by one person (the "owner") for the owner's own use with the owner's own two personal Google accounts. It is not offered to the public and collects no data from anyone else.</p>
+
+<h2>2. Data accessed</h2>
+<p>Through Google OAuth the application can access Gmail messages of the owner's accounts. In its current configuration, once a day it requests the message metadata of inbox messages from the previous 24 hours: sender, recipients (To/Cc), subject, labels, time, a short text preview supplied by Gmail, and the message identifier. Message bodies and attachments are not requested or stored. The daily digest file contains only the sender, the subject, the preview (cut to at most about 240 characters) and the message identifier; for messages whose subject suggests a password or verification code, the preview is left out of the digest file.</p>
+
+<h2>3. Scopes requested</h2>
+<p><code>gmail.readonly</code>, <code>gmail.send</code> and <code>gmail.modify</code>. Currently only read operations are implemented. Sending a message or moving a message to Trash is never done automatically; it would be done only for one specific action that the owner has explicitly approved beforehand. Permanent deletion is not performed. The application does not send mail or change mailbox contents on its own.</p>
+
+<h2>4. Where the data goes</h2>
+<ul>
+<li>The application runs on the owner's own Windows computer and listens only on that computer's local address (localhost).</li>
+<li>The digest is written as a text file to a folder on that computer that is not placed inside a cloud-synchronised folder.</li>
+<li>The automation software (n8n) keeps its run history in its local database and is configured to remove it after 7 days. That history contains the message metadata listed in section 2, including the preview that the digest file leaves out for password-like subjects.</li>
+<li>When the owner asks, an AI assistant (Claude, by Anthropic) reads the digest file to produce a summary for the owner. This means the digest content is then processed by Anthropic under its own terms and privacy policy.</li>
+<li>The application does not sell, rent or share Google user data with anyone else, does not use it for advertising, and no person other than the owner reads it.</li>
+<li>The automation software's telemetry and update notifications are switched off in its configuration.</li>
+</ul>
+
+<h2>5. Google API Services User Data Policy</h2>
+<p>The use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Data is used only to provide the owner's personal inbox digest and summaries described above. It is not used by the application to train generative AI models.</p>
+
+<h2>6. Retention and deletion</h2>
+<p>Digest files stay on the owner's computer until the owner deletes them; no automatic deletion is configured. The owner can revoke the application's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> and can delete the local files and the application's local database.</p>
+
+<h2>7. Security</h2>
+<p>Access tokens are stored by the automation software on the owner's computer. The computer is used by the owner only. No system is perfectly secure, and the owner is responsible for the security of that computer.</p>
+
+<h2>8. Changes</h2>
+<p>This policy may be updated; the date above shows the latest version.</p>
+
+<h2>9. Contact</h2>
+<p>Owner: <a href="https://github.com/1isagca">github.com/1isagca</a></p>
+
+<hr>
+<h1 lang="tr">Gizlilik Politikası</h1>
+<p lang="tr" class="mut">Son güncelleme: 2026-10-22</p>
+
+<h2 lang="tr">1. Kapsam</h2>
+<p lang="tr">Bu politika, tek bir kişinin (“sahibi”) kendi kullanımı için, kendi iki kişisel Google hesabıyla çalıştırdığı özel "AGC n8n Gmail" uygulamasını kapsar. Uygulama kamuya sunulmaz ve başka hiç kimseden veri toplamaz.</p>
+
+<h2 lang="tr">2. Erişilen veri</h2>
+<p lang="tr">Google OAuth ile uygulama, sahibinin hesaplarındaki Gmail iletilerine erişebilir. Mevcut yapılandırmada günde bir kez son 24 saatin gelen kutusu iletilerinin üst bilgilerini ister: gönderen, alıcılar (Kime/Bilgi), konu, etiketler, zaman, Gmail'in verdiği kısa metin önizlemesi ve ileti kimliği. İleti gövdeleri ve ekler istenmez, saklanmaz. Günlük döküm dosyası yalnızca gönderen, konu, önizleme (en çok yaklaşık 240 karaktere kısaltılmış) ve ileti kimliğini içerir; konusu parola veya doğrulama kodu izlenimi veren iletilerin önizlemesi döküm dosyasına yazılmaz.</p>
+
+<h2 lang="tr">3. İstenen kapsamlar</h2>
+<p lang="tr"><code>gmail.readonly</code>, <code>gmail.send</code> ve <code>gmail.modify</code>. Şu anda yalnızca okuma işlemleri uygulanmıştır. İleti gönderme veya iletiyi Çöp Kutusu'na taşıma hiçbir zaman otomatik yapılmaz; yalnızca sahibinin önceden açıkça onayladığı belirli bir işlem için yapılır. Kalıcı silme yapılmaz. Uygulama kendiliğinden e-posta göndermez veya posta kutusu içeriğini değiştirmez.</p>
+
+<h2 lang="tr">4. Verinin gittiği yerler</h2>
+<ul lang="tr">
+<li>Uygulama sahibinin kendi Windows bilgisayarında çalışır ve yalnızca o bilgisayarın yerel adresini (localhost) dinler.</li>
+<li>Döküm, bulutla eşitlenen bir klasörün içinde olmayan bir klasöre metin dosyası olarak yazılır.</li>
+<li>Otomasyon yazılımı (n8n) çalışma geçmişini yerel veritabanında tutar ve 7 gün sonra silecek şekilde yapılandırılmıştır. Bu geçmiş, 2. maddedeki ileti üst bilgilerini, parola benzeri konularda döküm dosyasının dışarıda bıraktığı önizleme dahil, içerir.</li>
+<li>Sahibi istediğinde bir yapay zekâ asistanı (Anthropic'in Claude'u) sahibine özet çıkarmak için döküm dosyasını okur. Bu durumda döküm içeriği Anthropic'in kendi şartları ve gizlilik politikası kapsamında işlenir.</li>
+<li>Uygulama Google kullanıcı verisini kimseye satmaz, kiralamaz veya paylaşmaz, reklam için kullanmaz; sahibi dışında hiçbir kişi bu veriyi okumaz.</li>
+<li>Otomasyon yazılımının telemetri ve güncelleme bildirimleri yapılandırmada kapalıdır.</li>
+</ul>
+
+<h2 lang="tr">5. Google API Hizmetleri Kullanıcı Verisi Politikası</h2>
+<p lang="tr">Google API'lerinden alınan bilginin kullanımı ve başka bir uygulamaya aktarımı, Sınırlı Kullanım gereklilikleri dahil <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Hizmetleri Kullanıcı Verisi Politikası</a>'na uygundur. Veri yalnızca yukarıda anlatılan kişisel gelen kutusu dökümünü ve özetleri sağlamak için kullanılır; uygulama tarafından üretken yapay zekâ modellerini eğitmek için kullanılmaz.</p>
+
+<h2 lang="tr">6. Saklama ve silme</h2>
+<p lang="tr">Döküm dosyaları sahibi silene kadar sahibinin bilgisayarında kalır; otomatik silme yapılandırılmamıştır. Sahibi uygulamanın erişimini her an <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> adresinden kaldırabilir, yerel dosyaları ve uygulamanın yerel veritabanını silebilir.</p>
+
+<h2 lang="tr">7. Güvenlik</h2>
+<p lang="tr">Erişim anahtarlarını otomasyon yazılımı sahibinin bilgisayarında saklar. Bilgisayarı yalnızca sahibi kullanır. Hiçbir sistem tamamen güvenli değildir; bu bilgisayarın güvenliği sahibinin sorumluluğundadır.</p>
+
+<h2 lang="tr">8. Değişiklikler</h2>
+<p lang="tr">Bu politika güncellenebilir; en son sürümü yukarıdaki tarih gösterir.</p>
+
+<h2 lang="tr">9. İletişim</h2>
+<p lang="tr">Sahibi: <a href="https://github.com/1isagca">github.com/1isagca</a></p>
+</main>
+</body>
+</html>
