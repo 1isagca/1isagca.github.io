@@ -18,13 +18,13 @@ a{color:inherit}
 <main>
 <p><a href="index.html">← AGC n8n Gmail</a></p>
 <h1>Privacy Policy</h1>
-<p class="mut">Last updated: 2026-10-22</p>
+<p class="mut">Last updated: 2026-10-23</p>
 
 <h2>1. Scope</h2>
 <p>This policy covers "AGC n8n Gmail", a private application run by one person (the "owner") for the owner's own use with the owner's own two personal Google accounts. It is not offered to the public and collects no data from anyone else.</p>
 
 <h2>2. Data accessed</h2>
-<p>Through Google OAuth the application can access Gmail messages of the owner's accounts. In its current configuration, once a day it requests the message metadata of inbox messages from the previous 24 hours: sender, recipients (To/Cc), subject, labels, time, a short text preview supplied by Gmail, and the message identifier. Message bodies and attachments are not requested or stored. The daily digest file contains only the sender, the subject, the preview (cut to at most about 240 characters) and the message identifier; for messages whose subject suggests a password or verification code, the preview is left out of the digest file.</p>
+<p>Through Google OAuth the application can access Gmail messages of the owner's accounts. In its current configuration, once a day it requests the message metadata of inbox messages from the previous 24 hours: sender, recipients (To/Cc), subject, labels, time, a short text preview supplied by Gmail, and the message identifier. Message bodies and attachments are not requested or stored. The daily digest file contains only the sender, the subject, the preview (cut to at most about 240 characters) and the message identifier; for messages whose subject suggests a password or verification code, the preview is left out of the digest file. If the computer was switched off at the scheduled time, the next run looks back up to 7 days instead of 24 hours.</p>
 
 <h2>3. Scopes requested</h2>
 <p><code>gmail.readonly</code>, <code>gmail.send</code> and <code>gmail.modify</code>. Currently only read operations are implemented. Sending a message or moving a message to Trash is never done automatically; it would be done only for one specific action that the owner has explicitly approved beforehand. Permanent deletion is not performed. The application does not send mail or change mailbox contents on its own.</p>
@@ -34,8 +34,10 @@ a{color:inherit}
 <li>The application runs on the owner's own Windows computer and listens only on that computer's local address (localhost).</li>
 <li>The digest is written as a text file to a folder on that computer that is not placed inside a cloud-synchronised folder.</li>
 <li>The automation software (n8n) keeps its run history in its local database and is configured to remove it after 7 days. That history contains the message metadata listed in section 2, including the preview that the digest file leaves out for password-like subjects.</li>
-<li>When the owner asks, an AI assistant (Claude, by Anthropic) reads the digest file to produce a summary for the owner. This means the digest content is then processed by Anthropic under its own terms and privacy policy.</li>
-<li>The application does not sell, rent or share Google user data with anyone else, does not use it for advertising, and no person other than the owner reads it.</li>
+<li>When the owner asks, or when the owner opens a working session with an AI assistant (Claude, by Anthropic), the assistant reads the digest file and a local sorting report made from it, to produce a summary for the owner. This content is then processed by Anthropic under its own terms and privacy policy. No assistant is set up to read this data on a schedule without the owner.</li>
+<li>Phone alerts (ntfy). If the owner turns on phone alerts, the application sends a short alert to the public notification service ntfy (ntfy.sh). The alert is designed to contain only counts, times and fixed phrases, such as "2 important", and not the sender, subject, preview, address or any other part of a message. The service can see the alert text, the topic name and the internet address of the owner's computer. ntfy handles this data under its own terms and privacy policy.</li>
+<li>Approval page and private network (Tailscale). The owner can open a local approval page from the owner's phone through Tailscale, a private network service. The page is served by software on the owner's computer. It shows the content of an action that waits for approval, which can include the recipient, subject and text of an e-mail that the assistant prepared. This content travels from the computer to the phone inside a connection that Tailscale encrypts. Tailscale runs the network that connects the two devices and may receive technical connection data, such as device names and network addresses. According to Tailscale's own description it does not receive the page content. The application does not send message content to Tailscale and is not set up to be reachable from the public internet. Tailscale handles its data under its own terms and privacy policy, and this policy cannot guarantee how it does so.</li>
+<li>The application does not sell or rent Google user data and does not use it for advertising. It does not intentionally share Google user data with anyone else, except in the cases that the owner has chosen and that this policy describes: (1) processing by the AI assistant that the owner uses; (2) the short phone alerts to ntfy, which are designed not to contain message content; (3) approval page content that passes over the encrypted Tailscale connection. Apart from the owner and the services named in this policy, no person is intended to have access to this data. No system is perfectly secure, and this policy does not guarantee absolute privacy.</li>
 <li>The automation software's telemetry and update notifications are switched off in its configuration.</li>
 </ul>
 
@@ -56,13 +58,13 @@ a{color:inherit}
 
 <hr>
 <h1 lang="tr">Gizlilik Politikası</h1>
-<p lang="tr" class="mut">Son güncelleme: 2026-10-22</p>
+<p lang="tr" class="mut">Son güncelleme: 2026-10-23</p>
 
 <h2 lang="tr">1. Kapsam</h2>
 <p lang="tr">Bu politika, tek bir kişinin (“sahibi”) kendi kullanımı için, kendi iki kişisel Google hesabıyla çalıştırdığı özel "AGC n8n Gmail" uygulamasını kapsar. Uygulama kamuya sunulmaz ve başka hiç kimseden veri toplamaz.</p>
 
 <h2 lang="tr">2. Erişilen veri</h2>
-<p lang="tr">Google OAuth ile uygulama, sahibinin hesaplarındaki Gmail iletilerine erişebilir. Mevcut yapılandırmada günde bir kez son 24 saatin gelen kutusu iletilerinin üst bilgilerini ister: gönderen, alıcılar (Kime/Bilgi), konu, etiketler, zaman, Gmail'in verdiği kısa metin önizlemesi ve ileti kimliği. İleti gövdeleri ve ekler istenmez, saklanmaz. Günlük döküm dosyası yalnızca gönderen, konu, önizleme (en çok yaklaşık 240 karaktere kısaltılmış) ve ileti kimliğini içerir; konusu parola veya doğrulama kodu izlenimi veren iletilerin önizlemesi döküm dosyasına yazılmaz.</p>
+<p lang="tr">Google OAuth ile uygulama, sahibinin hesaplarındaki Gmail iletilerine erişebilir. Mevcut yapılandırmada günde bir kez son 24 saatin gelen kutusu iletilerinin üst bilgilerini ister: gönderen, alıcılar (Kime/Bilgi), konu, etiketler, zaman, Gmail'in verdiği kısa metin önizlemesi ve ileti kimliği. İleti gövdeleri ve ekler istenmez, saklanmaz. Günlük döküm dosyası yalnızca gönderen, konu, önizleme (en çok yaklaşık 240 karaktere kısaltılmış) ve ileti kimliğini içerir; konusu parola veya doğrulama kodu izlenimi veren iletilerin önizlemesi döküm dosyasına yazılmaz. Bilgisayar zamanlanmış saatte kapalıysa sonraki çalışma 24 saat yerine en çok 7 gün geriye bakar.</p>
 
 <h2 lang="tr">3. İstenen kapsamlar</h2>
 <p lang="tr"><code>gmail.readonly</code>, <code>gmail.send</code> ve <code>gmail.modify</code>. Şu anda yalnızca okuma işlemleri uygulanmıştır. İleti gönderme veya iletiyi Çöp Kutusu'na taşıma hiçbir zaman otomatik yapılmaz; yalnızca sahibinin önceden açıkça onayladığı belirli bir işlem için yapılır. Kalıcı silme yapılmaz. Uygulama kendiliğinden e-posta göndermez veya posta kutusu içeriğini değiştirmez.</p>
@@ -72,8 +74,10 @@ a{color:inherit}
 <li>Uygulama sahibinin kendi Windows bilgisayarında çalışır ve yalnızca o bilgisayarın yerel adresini (localhost) dinler.</li>
 <li>Döküm, bulutla eşitlenen bir klasörün içinde olmayan bir klasöre metin dosyası olarak yazılır.</li>
 <li>Otomasyon yazılımı (n8n) çalışma geçmişini yerel veritabanında tutar ve 7 gün sonra silecek şekilde yapılandırılmıştır. Bu geçmiş, 2. maddedeki ileti üst bilgilerini, parola benzeri konularda döküm dosyasının dışarıda bıraktığı önizleme dahil, içerir.</li>
-<li>Sahibi istediğinde bir yapay zekâ asistanı (Anthropic'in Claude'u) sahibine özet çıkarmak için döküm dosyasını okur. Bu durumda döküm içeriği Anthropic'in kendi şartları ve gizlilik politikası kapsamında işlenir.</li>
-<li>Uygulama Google kullanıcı verisini kimseye satmaz, kiralamaz veya paylaşmaz, reklam için kullanmaz; sahibi dışında hiçbir kişi bu veriyi okumaz.</li>
+<li>Sahibi istediğinde ya da bir yapay zekâ asistanıyla (Anthropic'in Claude'u) çalışma oturumu açtığında asistan, sahibine özet çıkarmak için döküm dosyasını ve ondan yerelde üretilen sıralama raporunu okur. Bu içerik Anthropic'in kendi şartları ve gizlilik politikası kapsamında işlenir. Hiçbir asistan, sahibi olmadan bu veriyi zamanlanmış olarak okuyacak şekilde kurulmamıştır.</li>
+<li>Telefon uyarıları (ntfy). Sahibi telefon uyarılarını açtığında uygulama, genel bildirim servisi ntfy'ye (ntfy.sh) kısa bir uyarı gönderir. Uyarı yalnız sayıları, saatleri ve sabit ifadeleri (örneğin "2 önemli") içerecek şekilde tasarlanmıştır; bir iletinin göndericisini, konusunu, önizlemesini, adresini veya başka bir bölümünü içermez. Servis uyarı metnini, konu adını ve sahibinin bilgisayarının internet adresini görebilir. ntfy bu veriyi kendi şartları ve gizlilik politikası kapsamında işler.</li>
+<li>Onay sayfası ve özel ağ (Tailscale). Sahibi, yerel onay sayfasını telefonundan Tailscale adlı özel ağ hizmeti üzerinden açabilir. Sayfayı sahibinin bilgisayarındaki yazılım sunar. Sayfa, onay bekleyen bir işlemin içeriğini gösterir; bu, asistanın hazırladığı bir e-postanın alıcısını, konusunu ve metnini içerebilir. Bu içerik bilgisayardan telefona, Tailscale'in şifrelediği bir bağlantı içinde gider. Tailscale iki cihazı bağlayan ağı işletir ve cihaz adları ile ağ adresleri gibi teknik bağlantı verilerini alabilir. Tailscale'in kendi açıklamasına göre sayfa içeriğini almaz. Uygulama Tailscale'e ileti içeriği göndermez ve herkese açık internetten erişilebilecek şekilde kurulmamıştır. Tailscale verisini kendi şartları ve gizlilik politikası kapsamında işler; bu politika bunun nasıl yapıldığını garanti edemez.</li>
+<li>Uygulama Google kullanıcı verisini satmaz, kiralamaz ve reklam için kullanmaz. Bu veriyi, sahibinin seçtiği ve bu politikada anlatılan durumlar dışında bilerek kimseyle paylaşmaz: (1) sahibinin kullandığı yapay zekâ asistanının işlemesi; (2) ileti içeriği taşımayacak şekilde tasarlanmış, ntfy'ye giden kısa telefon uyarıları; (3) şifreli Tailscale bağlantısı üzerinden geçen onay sayfası içeriği. Sahibi ve bu politikada adı geçen hizmetler dışında hiçbir kişinin bu veriye erişmesi amaçlanmaz. Hiçbir sistem tamamen güvenli değildir ve bu politika mutlak gizlilik garantisi vermez.</li>
 <li>Otomasyon yazılımının telemetri ve güncelleme bildirimleri yapılandırmada kapalıdır.</li>
 </ul>
 
